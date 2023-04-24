@@ -1,22 +1,25 @@
-import React from 'react'
-import SignUp from "./components/SignUp"
-import {BrowserRouter,Route,Link,Routes} from 'react-router-dom'
-import Home from './components/Home'
+import React from "react";
+import SignUp from "./components/SignUp";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
 const App = () => {
   return (
-    <>
-    <BrowserRouter>
+    <div className="home">
+      {/* links url with component */}
+      <BrowserRouter>
+        {/* matches url and renders given component */}
         <Routes>
-        <Route path='/' Component={SignUp}/>
-      <Route exact path='/signup' Component={SignUp}/>
-      <Route path='/home' Component={Home}/>
-    </Routes>
-    </BrowserRouter>
-   
-   
-    
-    </>
-  )
-}
+          {/* make signUp as default route */}
+          {/* route attaches the url to the component */}
+          <Route path="/" Component={SignUp} />
+          {/* signup route */}
+          <Route path="/signup" Component={SignUp} />
+          {/* home route */}
+          <Route path="/home" Component={Home} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+};
 
-export default App
+export default App;
